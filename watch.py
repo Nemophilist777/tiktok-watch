@@ -135,8 +135,8 @@ def main() -> int:
     ensure_ytdlp()
     creators = load_creators()
     if not creators:
-        print("creators.txt 为空", file=sys.stderr)
-        return 2
+        print("creators.txt 为空，跳过本次检查")
+        return 0
 
     state = load_state()
     failures = 0
